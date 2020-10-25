@@ -1,3 +1,8 @@
+<% if @author.errors.any? %>
+  <% @author.errors.full_messages.each do |msg| %>
+    <span style="color: red"><%= msg %><br></span>
+  <% end %>
+<% end %>
 <h2>Create an Author</h2>
 <%= form_tag authors_path, method: "post" do %>
   <div class="field">
