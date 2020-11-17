@@ -8,9 +8,14 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post.update(post_params)
-
-    redirect_to post_path(@post)
+    # binding.pry
+    if @post.update(post_params)
+      # binding.pry
+      redirect_to post_path(@post)
+    else
+      # binding.pry
+      render :edit
+    end
   end
 
   private
